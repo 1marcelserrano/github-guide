@@ -1,11 +1,7 @@
 import Link from "next/link";
-import { modules } from "@/content/modulos";
-import { ProgressBar } from "./ProgressBar";
+import { HeaderProgress } from "./HeaderProgress";
 
 export function Header() {
-  const total = modules.length;
-  const completed = 0;
-
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-surface/80 backdrop-blur supports-[backdrop-filter]:bg-surface/60">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
@@ -22,7 +18,7 @@ export function Header() {
             GitHub para Não-Devs
           </span>
         </Link>
-        <ProgressBar completed={completed} total={total} />
+        <HeaderProgress />
       </div>
     </header>
   );

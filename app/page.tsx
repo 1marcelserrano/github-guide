@@ -1,9 +1,8 @@
-import { ModuleCard } from "@/components/ModuleCard";
+import { HomeGrid } from "@/components/HomeGrid";
 import { modules } from "@/content/modulos";
+import { moduleContents } from "@/content/modulos/all";
 
 export default function Home() {
-  const orderedModules = [...modules].sort((a, b) => a.order - b.order);
-
   return (
     <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-6 py-12 sm:py-16">
       <section className="max-w-3xl">
@@ -27,14 +26,10 @@ export default function Home() {
             Módulos
           </h2>
           <span className="font-mono text-[10px] uppercase tracking-widest text-muted">
-            {orderedModules.length} no total
+            {modules.length} no total
           </span>
         </div>
-        <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {orderedModules.map((module) => (
-            <ModuleCard key={module.slug} module={module} />
-          ))}
-        </div>
+        <HomeGrid modules={modules} moduleContents={moduleContents} />
       </section>
 
       <footer className="mt-20 border-t border-border pt-8 pb-4">
