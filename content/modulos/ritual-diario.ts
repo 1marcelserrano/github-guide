@@ -20,15 +20,15 @@ export const ritualDiario: ModuleContent = {
     },
     {
       heading: "Quando commitar",
-      body: "Não a cada caractere — você não está fazendo backup contínuo. A regra prática: ao final de uma sessão de trabalho ou quando você atinge um marco lógico (terminou o brief, fechou um draft, salvou uma versão de prompt que funcionou). Pense no commit como um ponto narrativo: 'aqui acabei X'. Ideal: 1 a 5 commits por dia de trabalho ativo no repo.",
+      body: "O ponto de entrada recomendado para quem está começando: **toda sexta-feira**, 1 minuto, como parte do ritual semanal de revisão do seu sistema. Você abre o GitHub Desktop, vê o que mudou na semana, escreve uma mensagem curta ('anti-padrões refinados / nova skill / KNOWLEDGE do cliente X'), commit + push. Pronto. Conforme o hábito se consolida, você vai naturalmente commitar também quando fechar um marco importante — um brief, um draft, uma versão de prompt que funcionou.",
     },
     {
       heading: "Como escrever boas mensagens de commit",
       body: "Verbo no imperativo + objeto curto. Bom: 'atualizar brief com novo escopo', 'adicionar prompt de pesquisa de mercado', 'reescrever introdução do artigo X'. Ruim: 'mudanças' (vago), 'aaaa' (preguiçoso), 'fix typo in like 17 places' (ok, mas pode ser 'corrigir typos no draft Y'). Em três meses, você vai folhear esse histórico — escreva pensando no você-do-futuro.",
     },
     {
-      heading: "Ciclo real do dia-a-dia",
-      body: "Manhã: abre VSCode (ou seu editor preferido) na pasta do repo, escreve, edita, lê. Final do bloco de trabalho: abre GitHub Desktop, vê o diff do que mudou, escreve mensagem de commit, commit, push. Pronto. O ritual leva 30 segundos e você ganha um histórico narrativo do seu trabalho intelectual da semana.",
+      heading: "Ciclo semanal — 1 minuto toda sexta",
+      body: "Toda sexta, antes de fechar o computador: abre GitHub Desktop, vê o diff do que mudou na semana, escreve mensagem de commit, commit, push. 1 minuto. Seu sistema fica versionado, backupeado e recuperável. Quem quiser automatizar pode delegar o ritual ao Claude Code com um agendamento — o Claude roda toda sexta às 18h, commita o que mudou e te notifica.",
     },
     {
       heading: "Erro comum: tratar o repo como o Drive",
@@ -49,16 +49,16 @@ export const ritualDiario: ModuleContent = {
         "Texto estruturado, reusável e que você quer rever — esse é o sweet spot do repo. Vídeo vai pro Drive; lista de tarefas vivas vão pro Notion/Things.",
     },
     {
-      question: "Qual a melhor frequência de commit?",
+      question: "Qual a frequência recomendada para quem está começando?",
       options: [
         "A cada caractere digitado",
         "Uma vez por mês",
-        "Ao final de uma sessão de trabalho ou quando atinge um marco lógico (1-5 commits/dia ativos)",
-        "Só no domingo à noite",
+        "Toda sexta-feira — 1 minuto como parte do ritual semanal de revisão do sistema",
+        "Só quando lembrar",
       ],
       correctIndex: 2,
       explanation:
-        "Commit é ponto narrativo, não backup contínuo. Frequência alta demais polui o histórico; frequência baixa demais perde a granularidade que torna o histórico útil.",
+        "Começar com o ritual semanal (toda sexta) garante consistência sem sobrecarga. Conforme o hábito se consolida, você vai commitar naturalmente também ao fechar marcos importantes durante a semana.",
     },
     {
       question: "Qual mensagem de commit é melhor?",
@@ -88,7 +88,7 @@ export const ritualDiario: ModuleContent = {
   checklist: [
     { id: "definir-o-que-vai", text: "Listar 3 tipos de conteúdo meu que devem ir pro repo" },
     { id: "definir-o-que-nao-vai", text: "Listar 2 tipos que devem ficar fora (e onde ficam: Drive ou Notion)" },
-    { id: "rotina-commit", text: "Definir minha rotina pessoal de commit (ex: final do dia)" },
+    { id: "rotina-commit", text: "Marcar toda sexta no calendário como dia de commit semanal" },
     { id: "primeiro-ritual", text: "Executar pelo menos 1 ciclo completo: editar → commit com boa mensagem → push" },
     { id: "regras-mensagens", text: "Adotar a regra: verbo no imperativo + objeto curto nas mensagens" },
   ],

@@ -20,7 +20,7 @@ export const contaERepo: ModuleContent = {
     },
     {
       heading: "As decisões do formulário",
-      body: "Nome do repo: kebab-case, curto, descritivo (ex: `meus-prompts`, `escrita-2026`). Descrição: uma frase. Público vs privado: público é visível para qualquer um na internet — bom para portfolio, ruim para rascunho íntimo. Privado é só seu. Marque 'Add a README file' (esse vira sua porta de entrada). Pode pular `.gitignore` e `license` por enquanto.",
+      body: "Nome do repo: kebab-case, curto, descritivo (ex: `md-files` ou `meu-sistema-cowork`). Descrição: uma frase. Público vs privado: público é visível para qualquer um na internet — bom para portfolio, ruim para rascunho íntimo. Privado é só seu. Marque 'Add a README file' (esse vira sua porta de entrada). Pode pular `.gitignore` e `license` por enquanto.",
     },
     {
       heading: "O que é o README",

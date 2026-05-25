@@ -31,7 +31,7 @@ export const modules: Module[] = [
   },
   {
     slug: "ritual-diario",
-    title: "Ritual diário com o repo",
+    title: "Ritual semanal com o repo",
     description:
       "O que vai pro repo, quando commitar e como ele se relaciona com Drive e Notion.",
     order: 4,
