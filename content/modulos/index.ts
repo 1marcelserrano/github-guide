@@ -43,4 +43,11 @@ export const modules: Module[] = [
       "Repo como KNOWLEDGE viva — arquivos contextuais e o ciclo de update com o Claude.",
     order: 5,
   },
+  {
+    slug: "segredos-e-seguranca",
+    title: "Segredos e segurança",
+    description:
+      "Senhas e chaves fora do repo: .env, .gitignore, revisão antes do push e o que fazer se algo vazar.",
+    order: 6,
+  },
 ];

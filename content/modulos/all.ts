@@ -5,6 +5,7 @@ import { githubDesktop } from "./github-desktop";
 import { estruturaDoRepo } from "./estrutura-do-repo";
 import { ritualDiario } from "./ritual-diario";
 import { conectandoClaude } from "./conectando-claude";
+import { segredosESeguranca } from "./segredos-e-seguranca";
 
 export const moduleContents: Record<string, ModuleContent> = {
   "por-que-github": porQueGithub,
@@ -13,4 +14,5 @@ export const moduleContents: Record<string, ModuleContent> = {
   "estrutura-do-repo": estruturaDoRepo,
   "ritual-diario": ritualDiario,
   "conectando-claude": conectandoClaude,
+  "segredos-e-seguranca": segredosESeguranca,
 };

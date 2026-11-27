@@ -34,6 +34,14 @@ export const githubDesktop: ModuleContent = {
       heading: "Push — publicando na nuvem",
       body: "O commit ficou apenas no seu computador. Para mandar para a nuvem, clique em 'Push origin' no topo. Pronto. Recarregue a página do repo no github.com e veja sua mudança lá. Esse é o ciclo completo: editar local → commit → push. Você acabou de fazer pelo GUI tudo que devs fazem por terminal.",
     },
+    {
+      heading: "Desfazendo sem decorar comando",
+      body: "Errou? O Git foi feito para isso, e você não precisa saber nenhum comando. No GitHub Desktop, se o último commit ainda não foi enviado, clique em 'Undo' no rodapé da aba Changes (ou, na aba History, clique com o botão direito no último commit e escolha 'Undo Commit') e as suas mudanças voltam para a lista de arquivos. Se o commit já subiu, abra a aba History, clique com o botão direito no commit e escolha 'Revert Changes in Commit' (no Windows, 'Revert changes in commit'). O Desktop cria um commit novo que desfaz o anterior, e o histórico continua inteiro: nada é apagado, só corrigido. Outro caminho é pedir ao Claude (veja a próxima seção).",
+    },
+    {
+      heading: "Dois caminhos lado a lado: Desktop ou conversa com o Claude",
+      body: "Tudo o que você fez neste módulo também pode ser feito pedindo ao Claude Code, em linguagem normal: 'faça um commit com o que mudou', 'envie para o GitHub', 'desfaça o último commit'. Os dois caminhos usam o mesmo Git por baixo e podem ser misturados no mesmo repo. Desktop é melhor quando você quer ver o diff com seus olhos, escolher arquivo por arquivo o que entra no commit e não depende de nenhuma IA aberta. A conversa com o Claude é melhor para tarefas de várias etapas, para o que você ainda não sabe como pedir ao Git, e para escrever uma mensagem de commit a partir do que mudou. Regra prática: peça ao Claude, e confira no Desktop. Ver o diff antes de enviar é o hábito que mais evita susto.",
+    },
   ],
   quiz: [
     {
@@ -96,6 +104,18 @@ export const githubDesktop: ModuleContent = {
       explanation:
         "Pull é o oposto do push: você baixa para local o que existe na nuvem. Importante quando você edita pelo navegador ou de outro computador.",
     },
+    {
+      question: "Você fez um commit com um erro e já deu push. Qual caminho desfaz sem apagar o histórico?",
+      options: [
+        "Apagar o repo e criar de novo",
+        "Reverter o commit: o Git cria um commit novo que desfaz o anterior, e o histórico se mantém",
+        "Esperar a nuvem corrigir sozinha",
+        "Editar a mensagem do commit antigo no github.com",
+      ],
+      correctIndex: 1,
+      explanation:
+        "Reverter é a forma segura de desfazer algo já enviado: o erro continua visível no histórico, mas a versão atual volta a ficar certa. No Desktop é 'Revert Changes in Commit' (no Windows, 'Revert changes in commit'), na aba History.",
+    },
   ],
   checklist: [
     { id: "instalar-desktop", text: "Instalar o GitHub Desktop e fazer login" },
@@ -105,5 +125,6 @@ export const githubDesktop: ModuleContent = {
     { id: "ver-diff", text: "Voltar ao Desktop e visualizar o diff da mudança" },
     { id: "primeiro-commit", text: "Fazer meu primeiro commit com mensagem no imperativo" },
     { id: "primeiro-push", text: "Fazer push e ver a mudança aparecer no github.com" },
+    { id: "praticar-revert", text: "Fazer um commit de teste e desfazê-lo (Undo ou Revert) para ver que nada se perde" },
   ],
 };
