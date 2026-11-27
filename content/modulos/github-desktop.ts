@@ -36,7 +36,7 @@ export const githubDesktop: ModuleContent = {
     },
     {
       heading: "Desfazendo sem decorar comando",
-      body: "Errou? O Git foi feito para isso, e você não precisa saber nenhum comando. No GitHub Desktop, se o último commit ainda não foi enviado, o menu Branch tem 'Undo Most Recent Commit' e as suas mudanças voltam para a lista de arquivos. Se o commit já subiu, abra a aba History, clique com o botão direito no commit e escolha 'Revert Changes in Commit'. O Desktop cria um commit novo que desfaz o anterior, e o histórico continua inteiro: nada é apagado, só corrigido. Outro caminho é pedir ao Claude (veja a próxima seção).",
+      body: "Errou? O Git foi feito para isso, e você não precisa saber nenhum comando. No GitHub Desktop, se o último commit ainda não foi enviado, clique em 'Undo' no rodapé da aba Changes (ou, na aba History, clique com o botão direito no último commit e escolha 'Undo Commit') e as suas mudanças voltam para a lista de arquivos. Se o commit já subiu, abra a aba History, clique com o botão direito no commit e escolha 'Revert Changes in Commit' (no Windows, 'Revert changes in commit'). O Desktop cria um commit novo que desfaz o anterior, e o histórico continua inteiro: nada é apagado, só corrigido. Outro caminho é pedir ao Claude (veja a próxima seção).",
     },
     {
       heading: "Dois caminhos lado a lado: Desktop ou conversa com o Claude",
@@ -114,7 +114,7 @@ export const githubDesktop: ModuleContent = {
       ],
       correctIndex: 1,
       explanation:
-        "Reverter é a forma segura de desfazer algo já enviado: o erro continua visível no histórico, mas a versão atual volta a ficar certa. No Desktop é 'Revert Changes in Commit', na aba History.",
+        "Reverter é a forma segura de desfazer algo já enviado: o erro continua visível no histórico, mas a versão atual volta a ficar certa. No Desktop é 'Revert Changes in Commit' (no Windows, 'Revert changes in commit'), na aba History.",
     },
   ],
   checklist: [

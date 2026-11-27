@@ -12,7 +12,7 @@ export const segredosESeguranca: ModuleContent = {
     },
     {
       heading: "Por que o repo é o lugar errado",
-      body: "O Git guarda o histórico inteiro. Se uma chave entrou num commit uma única vez, ela continua guardada naquela versão antiga, mesmo que você apague o arquivo no commit seguinte. Em repo público, existem programas que varrem o GitHub o tempo todo atrás desse tipo de texto, e o intervalo entre o push e o abuso pode ser de minutos. Em repo privado o risco é menor, mas não zero: o repo pode ser compartilhado, clonado ou virar público um dia. A regra mais simples é a que vale sempre: segredo não entra no repo, nem no privado.",
+      body: "O Git guarda o histórico inteiro. Se uma chave entrou num commit uma única vez, ela continua guardada naquela versão antiga, mesmo que você apague o arquivo no commit seguinte. Em repo público, existem programas que varrem o GitHub o tempo todo atrás desse tipo de texto, e o intervalo entre o push e o abuso pode ser muito curto. Em repo privado o risco é menor, mas não zero: o repo pode ser compartilhado, clonado ou virar público um dia. A regra mais simples é a que vale sempre: segredo não entra no repo, nem no privado.",
     },
     {
       heading: "Onde o segredo mora: o arquivo .env",
@@ -28,11 +28,11 @@ export const segredosESeguranca: ModuleContent = {
     },
     {
       heading: "Conferir antes do push",
-      body: "Faça disso um hábito antes de mandar qualquer coisa para a nuvem. No GitHub Desktop, passe os olhos na lista de arquivos alterados: apareceu algum `.env`, algum arquivo de credenciais, algum documento com dado de cliente? Desmarque e ajuste o `.gitignore`. Com o Claude, peça: 'antes do push, procure no que vou enviar por senhas, chaves, tokens e dados pessoais, e me diga o que achou'. É uma segunda leitura barata. O GitHub também pode barrar um push que contenha certos tipos de chave conhecidos e avisar na tela. Se isso acontecer, não procure um jeito de contornar: leia o aviso, remova o segredo e tente de novo.",
+      body: "Faça disso um hábito antes de mandar qualquer coisa para a nuvem. No GitHub Desktop, passe os olhos na lista de arquivos alterados: apareceu algum `.env`, algum arquivo de credenciais, algum documento com dado de cliente? Desmarque e ajuste o `.gitignore`. Com o Claude, peça: 'antes do push, procure no que vou enviar por senhas, chaves, tokens e dados pessoais, e me diga o que achou'. É uma segunda leitura barata. O GitHub também pode barrar um push que contenha certos tipos de chave conhecidos e avisar na tela. Isso não pega tudo: só cobre tipos de chave conhecidos, em repo privado costuma vir desligado, e senha comum ou dado pessoal passam batido. A revisão manual continua valendo. Se o aviso persistir mesmo depois de apagar o segredo do arquivo, ele ainda está em algum commit local que não foi enviado: peça ao Claude para tirar o segredo desses commits antes de tentar de novo. Se isso acontecer, não procure um jeito de contornar: leia o aviso, remova o segredo e tente de novo.",
     },
     {
       heading: "E os logins do GitHub e da hospedagem?",
-      body: "Quando você pede ao Claude para usar a CLI do GitHub (o `gh`, o GitHub pelo terminal, que o Claude instala e opera por você), o login acontece pelo navegador: o `gh auth login` abre uma página do GitHub, você autoriza lá, e o acesso fica guardado no cofre de credenciais do seu computador. Você não cola senha nem token em chat nenhum. A hospedagem do site (a Vercel, por exemplo) segue a mesma lógica: as chaves que o site publicado precisa ficam na área de variáveis de ambiente do projeto, no painel dela, e não no repo. Regra geral: se uma ferramenta pedir para você colar uma senha ou chave num chat, pare e pergunte se existe um login pelo navegador.",
+      body: "Quando você pede ao Claude para usar a CLI do GitHub (o `gh`, o GitHub pelo terminal, que o Claude instala e opera por você), o login acontece pelo navegador: o `gh auth login` abre uma página do GitHub, você autoriza lá, e o acesso normalmente fica guardado no cofre de credenciais do seu computador. Você não cola senha nem token em chat nenhum. A hospedagem do site (a Vercel, por exemplo) segue a mesma lógica: as chaves que o site publicado precisa ficam na área de variáveis de ambiente do projeto, no painel dela, e não no repo. Regra geral: se uma ferramenta pedir para você colar uma senha ou chave num chat, pare e pergunte se existe um login pelo navegador.",
     },
     {
       heading: "Se vazou: a ordem importa",
