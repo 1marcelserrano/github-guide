@@ -31,6 +31,22 @@ export const ritualDiario: ModuleContent = {
       body: "Toda sexta, antes de fechar o computador: abre GitHub Desktop, vê o diff do que mudou na semana, escreve mensagem de commit, commit, push. 1 minuto. Seu sistema fica versionado, backupeado e recuperável. Quem quiser automatizar pode delegar o ritual ao Claude Code com um agendamento — o Claude roda toda sexta às 18h, commita o que mudou e te notifica.",
     },
     {
+      heading: "Commit salva, push envia, deploy publica",
+      body: "São três gestos diferentes, e confundir um com o outro é a origem de quase todo susto. Commit é um ponto de salvamento no seu computador, como salvar um jogo: dá para voltar a ele quando quiser. Push envia esses pontos para o GitHub, e é o seu backup na nuvem. Deploy é publicar: só existe quando o repo é um site ou app ligado a uma hospedagem (a Vercel, por exemplo, que fica de olho no repo e publica sozinha a cada push na branch principal). Num repo só de textos, não existe deploy e o push apenas guarda. Num repo de site, o push passa a ser o gesto que coloca a mudança no ar, e por isso vale uma conferência antes.",
+    },
+    {
+      heading: "Rodar local primeiro, publicar depois",
+      body: "Quando o repo é um site, ele roda primeiro só no seu computador, num endereço como `localhost`. Ali você vê o resultado no navegador, ninguém mais enxerga, e dá para errar à vontade. Só depois de olhar e aprovar você faz commit e push, e a hospedagem publica. Ao trabalhar com o Claude, peça 'rode o site localmente e me diga o endereço', confira, e só então peça o commit e o envio. Publicar passa a ser um gesto que você declara, não um acidente. A Vercel ainda cria uma prévia com endereço próprio para pushes em outras branches, o que permite testar online sem tocar no site principal.",
+    },
+    {
+      heading: "Pedindo ao Claude para instalar e usar a CLI do GitHub",
+      body: "A CLI do GitHub, chamada `gh`, é o GitHub pelo terminal. Você não precisa aprender a usá-la: peça ao Claude 'instale a CLI do GitHub e faça meu login'. Ele instala, roda o `gh auth login` e abre uma página no navegador para você autorizar. A partir daí, o Claude consegue criar repositórios, enviar o trabalho e abrir o que for preciso no GitHub a seu pedido. Um exemplo de pedido: 'crie um repo privado chamado meu-projeto com esta pasta e envie tudo'. Leia o que ele pretende fazer, principalmente quando for criar algo público, e lembre-se do módulo de segredos: login sempre pelo navegador, nunca colando token no chat.",
+    },
+    {
+      heading: "Reverter pedindo ao Claude",
+      body: "Se uma mudança deu errado, você não precisa saber qual comando usar. Peça: 'a última alteração quebrou a página inicial, crie um commit que desfaça ela, sem apagar o histórico'. Dizer a segunda parte importa, porque existem formas de desfazer que reescrevem a história, e elas são mais arriscadas depois de um push. Reverter por commit novo é seguro: o erro fica registrado, a versão atual volta a ficar certa, e você pode até desfazer o desfazer. Uma ressalva: reverter conserta o código, mas não resolve um segredo que vazou. Esse caso tem receita própria no módulo de segredos e segurança.",
+    },
+    {
       heading: "Erro comum: tratar o repo como o Drive",
       body: "Quem vem do Drive tende a ou commitar tudo (incluindo binários pesados) ou nunca commitar (ficar editando local sem registrar marcos). Os dois extremos esvaziam o ganho. Compromisso: texto vai pro repo com commits regulares; o resto vai pro Drive ou Notion.",
     },
@@ -84,12 +100,49 @@ export const ritualDiario: ModuleContent = {
       explanation:
         "Existem bots literalmente fazendo scan de novos commits 24/7. Pior: deletar o arquivo num commit novo NÃO apaga o histórico — o segredo continua acessível na versão antiga.",
     },
+    {
+      question: "Qual é a diferença entre commit, push e deploy?",
+      options: [
+        "São nomes diferentes para a mesma coisa",
+        "Commit salva um ponto no seu computador, push envia para o GitHub, deploy publica o site ou app quando há uma hospedagem ligada ao repo",
+        "Commit publica o site, push salva no computador, deploy apaga o histórico",
+        "Push salva no computador, commit envia para o GitHub, deploy cria o repo",
+      ],
+      correctIndex: 1,
+      explanation:
+        "Commit é local, push leva para a nuvem e deploy só existe quando uma hospedagem observa o repo. Num repo de textos, o ciclo termina no push.",
+    },
+    {
+      question: "Por que rodar o site localmente antes de publicar?",
+      options: [
+        "Porque é obrigatório pelo Git",
+        "Porque no endereço local só você enxerga o resultado, e pode testar e errar sem afetar o site no ar",
+        "Porque deixa o site mais rápido depois",
+        "Porque a hospedagem cobra por cada publicação",
+      ],
+      correctIndex: 1,
+      explanation:
+        "O ambiente local é privado. Conferir ali e só depois dar commit e push faz de publicar um gesto deliberado.",
+    },
+    {
+      question: "Qual pedido ao Claude desfaz uma mudança já enviada de forma mais segura?",
+      options: [
+        "'Apague o histórico e refaça tudo'",
+        "'Crie um commit que desfaça a última alteração, sem apagar o histórico'",
+        "'Force o envio da versão antiga'",
+        "'Delete o repo no GitHub'",
+      ],
+      correctIndex: 1,
+      explanation:
+        "O commit que desfaz mantém o histórico intacto e pode ele mesmo ser desfeito. Reescrever o histórico depois de um push é mais arriscado.",
+    },
   ],
   checklist: [
     { id: "definir-o-que-vai", text: "Listar 3 tipos de conteúdo meu que devem ir pro repo" },
     { id: "definir-o-que-nao-vai", text: "Listar 2 tipos que devem ficar fora (e onde ficam: Drive ou Notion)" },
     { id: "rotina-commit", text: "Marcar toda sexta no calendário como dia de commit semanal" },
     { id: "primeiro-ritual", text: "Executar pelo menos 1 ciclo completo: editar → commit com boa mensagem → push" },
+    { id: "pedir-revert", text: "Pedir ao Claude um commit que desfaça uma mudança de teste, sem apagar o histórico" },
     { id: "regras-mensagens", text: "Adotar a regra: verbo no imperativo + objeto curto nas mensagens" },
   ],
 };
